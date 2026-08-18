@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile-first viewport -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="description"
+        content="A little something made especially for you."
+    >
+
+    <meta name="theme-color" content="#fff8f5">
+
+    <title>A little something for you ♡</title>
+
+    <!--
+        Google Fonts.
+        The site still works with system fonts if these fail to load.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- =========================================================
+         BACKGROUND DECORATION
+         ========================================================= -->
+
+    <div class="background" aria-hidden="true">
+        <div class="background__glow background__glow--one"></div>
+        <div class="background__glow background__glow--two"></div>
+        <div class="background__glow background__glow--three"></div>
+    </div>
+
+    <!-- JS adds subtle dots / stars / hearts here -->
+    <div id="particleLayer" class="particle-layer" aria-hidden="true"></div>
+
+    <!-- Hearts/confetti generated when YES is clicked -->
+    <div id="celebrationLayer" class="celebration-layer" aria-hidden="true"></div>
+
+    <!-- Tiny heart following cursor on desktop -->
+    <div id="cursorHeart" class="cursor-heart" aria-hidden="true">♡</div>
+
+    <!-- =========================================================
+         PROGRESS INDICATOR
+         ========================================================= -->
+
+    <nav
+        class="progress"
+        id="progress"
+        aria-label="Story progress"
+    >
+        <span class="progress__item is-active" data-progress="1">♡</span>
+        <span class="progress__item" data-progress="2">♡</span>
+        <span class="progress__item" data-progress="3">♡</span>
+        <span class="progress__item" data-progress="4">♡</span>
+        <span class="progress__item" data-progress="5">♡</span>
+    </nav>
+
+    <!-- =========================================================
+         MAIN EXPERIENCE
+         ========================================================= -->
+
+    <main class="experience" id="experience">
+
+        <!-- =====================================================
+             SCENE 1 — OPENING
+             ===================================================== -->
+
+        <section
+            class="scene scene--opening is-active"
+            id="scene1"
+            data-scene="1"
+            aria-labelledby="openingTitle"
+        >
+            <div class="scene__content opening-content">
+
+                <div class="mini-decoration" aria-hidden="true">
+                    <span></span>
+                    <i>♡</i>
+                    <span></span>
+                </div>
+
+                <p class="eyebrow opening-reveal opening-reveal--1">
+                    a tiny interruption to your day
+                </p>
+
+                <h1
+                    class="opening-title opening-reveal opening-reveal--2"
+                    id="openingTitle"
+                >
+                    Hey <span data-config="herName">[HER_NAME]</span>...
+                </h1>
+
+                <p class="opening-subtitle opening-reveal opening-reveal--3">
+                    I made something for you.
+                </p>
+
+                <p class="opening-whisper opening-reveal opening-reveal--4">
+                    There’s something I've been wanting to tell you...
+                </p>
+
+                <button
+                    class="button button--primary opening-button opening-reveal opening-reveal--5"
+                    id="openButton"
+                    type="button"
+                >
+                    <span>Open it</span>
+                    <span class="button__icon">♡</span>
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             SCENE 2 — CONFESSION
+             ===================================================== -->
+
+        <section
+            class="scene scene--message"
+            id="scene2"
+            data-scene="2"
+            aria-labelledby="messageTitle"
+        >
+            <div class="scene__content story-content">
+
+                <p class="eyebrow">
+                    okay, here goes...
+                </p>
+
+                <h2 class="scene-heading" id="messageTitle">
+                    A little confession.
+                </h2>
+
+                <div class="story-card">
+
+                    <p class="story-line" data-story-line>
+                        Somehow, studying became a little more fun whenever
+                        you're around.
+                    </p>
+
+                    <p class="story-line story-line--small" data-story-line>
+                        And somewhere along the way...
+                    </p>
+
+                    <p class="story-line" data-story-line>
+                        I realized I don't just like spending time with you.
+                    </p>
+
+                    <div class="dramatic-pause" data-story-line aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div
+                        class="confession"
+                        id="confession"
+                        data-story-line
+                    >
+                        <span class="confession__tiny">
+                            So...
+                        </span>
+
+                        <p class="confession__main" id="confessionText">
+                            I think I like you. Like... actually like you. ❤️
+                        </p>
+                    </div>
+
+                </div>
+
+                <button
+                    class="button button--soft hidden-until-ready"
+                    id="messageContinueButton"
+                    type="button"
+                >
+                    <span>Keep going</span>
+                    <span class="button__icon">→</span>
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             SCENE 3 — HONEST NOTE
+             ===================================================== -->
+
+        <section
+            class="scene scene--note"
+            id="scene3"
+            data-scene="3"
+            aria-labelledby="noteTitle"
+        >
+            <div class="scene__content note-content">
+
+                <div class="note-card">
+
+                    <div class="note-card__heart" aria-hidden="true">
+                        ♡
+                    </div>
+
+                    <p class="eyebrow">
+                        one important thing
+                    </p>
+
+                    <h2 class="scene-heading" id="noteTitle">
+                        No pressure. Really.
+                    </h2>
+
+                    <p class="note-copy">
+                        I don't know exactly how you feel about me,
+                        and there's absolutely no pressure.
+                    </p>
+
+                    <p class="note-copy">
+                        I just didn't want to keep pretending
+                        I didn't feel anything.
+                    </p>
+
+                    <div class="soft-divider" aria-hidden="true">
+                        <span></span>
+                        <i>♡</i>
+                        <span></span>
+                    </div>
+
+                    <p class="note-question">
+                        But there's also something I'd really like to ask you...
+                    </p>
+
+                    <button
+                        class="button button--primary"
+                        id="questionButton"
+                        type="button"
+                    >
+                        <span>What is it?</span>
+                        <span class="button__icon">👀</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             SCENE 4 — STUDY DATE INVITATION
+             ===================================================== -->
+
+        <section
+            class="scene scene--invitation"
+            id="scene4"
+            data-scene="4"
+            aria-labelledby="invitationTitle"
+        >
+            <div class="scene__content invitation-content">
+
+                <p class="eyebrow">
+                    and the actual question is...
+                </p>
+
+                <article class="invitation-card">
+
+                    <div class="invitation-card__topline">
+                        <span>an invitation</span>
+                        <span aria-hidden="true">♡</span>
+                    </div>
+
+                    <div class="invitation-card__icon" aria-hidden="true">
+                        📚
+                    </div>
+
+                    <h2
+                        class="invitation-title"
+                        id="invitationTitle"
+                    >
+                        Study date?
+                        <span aria-hidden="true">☕</span>
+                    </h2>
+
+                    <div class="date-details">
+
+                        <div class="date-detail">
+                            <span class="date-detail__icon" aria-hidden="true">
+                                ◷
+                            </span>
+
+                            <div>
+                                <small>when</small>
+                                <strong data-config="dateLabel">
+                                    This Friday
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="date-detail">
+                            <span class="date-detail__icon" aria-hidden="true">
+                                ⏱
+                            </span>
+
+                            <div>
+                                <small>time</small>
+                                <strong>
+                                    <span data-config="startTime">8:00 AM</span>
+                                    —
+                                    <span data-config="endTime">11:00 AM</span>
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="date-detail">
+                            <span class="date-detail__icon" aria-hidden="true">
+                                ⌖
+                            </span>
+
+                            <div>
+                                <small>where</small>
+                                <strong data-config="location">
+                                    [FAVORITE_SPOT]
+                                </strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="invitation-copy">
+                        Just you, me, our unfinished work, and probably
+                        way too many study breaks.
+                    </p>
+
+                    <p class="invitation-question">
+                        Would you go on a study date with me?
+                    </p>
+
+                    <div
+                        class="answer-buttons"
+                        aria-label="Study date response"
+                    >
+                        <button
+                            class="button button--yes"
+                            id="yesButton"
+                            type="button"
+                        >
+                            Yes, I'd love to
+                            <span aria-hidden="true">💗</span>
+                        </button>
+
+                        <button
+                            class="button button--maybe"
+                            id="maybeButton"
+                            type="button"
+                        >
+                            Maybe another time :)
+                        </button>
+                    </div>
+
+                    <p class="invitation-footnote">
+                        Either answer is completely okay. ♡
+                    </p>
+
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             SCENE 5A — YES
+             ===================================================== -->
+
+        <section
+            class="scene scene--yes"
+            id="sceneYes"
+            data-scene="5"
+            aria-labelledby="yesTitle"
+        >
+            <div class="scene__content result-content">
+
+                <div class="result-card result-card--yes">
+
+                    <div class="happy-face" aria-hidden="true">
+                        ♡
+                    </div>
+
+                    <p class="eyebrow">
+                        okay I am trying to act normal
+                    </p>
+
+                    <h2 class="yes-title" id="yesTitle">
+                        WAIT—REALLY??
+                        <span aria-hidden="true">😭❤️</span>
+                    </h2>
+
+                    <p class="yes-main-message">
+                        Okay.
+                        <em>It's a date.</em>
+                    </p>
+
+                    <div class="final-date-card">
+
+                        <div>
+                            <small>Friday</small>
+
+                            <strong>
+                                <span data-config="startTime">
+                                    8:00 AM
+                                </span>
+                                –
+                                <span data-config="endTime">
+                                    11:00 AM
+                                </span>
+                            </strong>
+                        </div>
+
+                        <span
+                            class="final-date-card__divider"
+                            aria-hidden="true"
+                        ></span>
+
+                        <div>
+                            <small>where</small>
+                            <strong data-config="location">
+                                [FAVORITE_SPOT]
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <p class="final-personal-line">
+                        I'll see you there,
+                        <span data-config="herName">[HER_NAME]</span>
+                        ♡
+                    </p>
+
+                    <p class="signature">
+                        — <span data-config="myName">[MY_NAME]</span>
+                    </p>
+
+                    <p class="final-joke">
+                        Now I should probably actually study so I don't
+                        embarrass myself on the study date.
+                    </p>
+
+                    <button
+                        class="button button--calendar"
+                        id="calendarButton"
+                        type="button"
+                    >
+                        <span aria-hidden="true">📅</span>
+                        Add to Calendar
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             SCENE 5B — MAYBE / NO
+             ===================================================== -->
+
+        <section
+            class="scene scene--maybe"
+            id="sceneMaybe"
+            data-scene="5"
+            aria-labelledby="maybeTitle"
+        >
+            <div class="scene__content result-content">
+
+                <div class="result-card result-card--maybe">
+
+                    <div class="gentle-heart" aria-hidden="true">
+                        ♡
+                    </div>
+
+                    <p class="eyebrow">
+                        and that's genuinely okay
+                    </p>
+
+                    <h2
+                        class="maybe-title"
+                        id="maybeTitle"
+                    >
+                        That's completely okay ❤️
+                    </h2>
+
+                    <p class="maybe-copy">
+                        I meant what I said — no pressure at all.
+                    </p>
+
+                    <p class="maybe-copy">
+                        I'm still really glad I finally told you.
+                    </p>
+
+                    <div class="soft-divider" aria-hidden="true">
+                        <span></span>
+                        <i>♡</i>
+                        <span></span>
+                    </div>
+
+                    <p class="maybe-ending">
+                        See you around,
+                        <span data-config="herName">[HER_NAME]</span>
+                        :)
+                    </p>
+
+                    <p class="signature">
+                        — <span data-config="myName">[MY_NAME]</span>
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         EASTER EGG
+         Click the tiny heart in the corner.
+         ========================================================= -->
+
+    <div class="easter-egg">
+        <div
+            class="easter-egg__message"
+            id="easterEggMessage"
+            role="status"
+            aria-live="polite"
+        >
+            psst... yes, I spent way too long making this.
+        </div>
+
+        <button
+            class="easter-egg__button"
+            id="easterEggButton"
+            type="button"
+            aria-label="A suspiciously tiny heart"
+            aria-expanded="false"
+        >
+            ♡
+        </button>
+    </div>
+
+
+    <!-- Used for accessibility announcements -->
+    <div
+        class="sr-only"
+        id="liveRegion"
+        aria-live="polite"
+    ></div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
